@@ -1,0 +1,6 @@
+six
+pyinquirer
+Click
+pyfiglet
+colorama
+termcolor
