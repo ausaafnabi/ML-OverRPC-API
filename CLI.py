@@ -4,6 +4,7 @@ import click
 from PyInquirer import (Token,ValidationError,Validator ,print_json,prompt,style_from_dict)
 import six
 from pyfiglet import figlet_format
+from utils.CreateTemplate import * 
 
 try:
      import colorama
@@ -44,14 +45,23 @@ class EmptyValidator(Validator):
                 message="You can't leave this blank",
                 cursor_position = len(value.text))
 
-def askMLModelInformation():
+def getContentType(answer, conttype):
+    return answer.get("content_type").lower() == conttype.lower()
+
+def askProjectInfo():
     questions = [
         {
             'type' : 'input',
-            'name' : 'FileName',
-            'message' : 'FILENAME',
+            'name' : 'ProjectName',
+            'message' : 'PROJECTNAME',
             'validate' : EmptyValidator 
         },
+    ]
+    answers = prompt(questions,style=style)
+    return answers
+
+def askMLModelInformation():
+    questions = [
         {
             'type' : 'input',
             'name' : 'Dataset',
@@ -86,7 +96,12 @@ def askMLModelInformation():
 def main():
     log("Over-RPC",color="red",figlet=True)
     log("Set-Up The Chain Call Procedure for ML models","green")
-    MLInfo = askMLModelInformation()
+    ProjInfo = askProjectInfo()
+    #MLInfo = askMLModelInformation()
+
+    CreateDirectory(ProjInfo.get('ProjectName'))
+    dirmsg = 'Creating ' + ProjInfo.get('ProjectName') + '  Directory in '
+    log(dirmsg ,color="green")
 
 if __name__ == '__main__':
     main()
