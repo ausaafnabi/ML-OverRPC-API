@@ -7,3 +7,4 @@ install:
   - pip install -r Requirements.txt
 script:
   - python -m unittest discover
+  - python3 -m unittest discover -v -s "test/unit" 
