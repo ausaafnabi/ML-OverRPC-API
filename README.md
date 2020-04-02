@@ -1,2 +1,3 @@
-# ML-OverRPC-API
-A Machine Learning API capable of performing redundant operation on Remote Machines to make taks more easier and Robust.
+# ML-OverRPC-API  [![Build Status](https://travis-ci.com/ausaafnabi/ML-OverRPC-API.svg?branch=master)](https://travis-ci.com/ausaafnabi/ML-OverRPC-API)
+
+A Machine Learning API capable of performing redundant operation on Remote Machines to make tasks more easier and Robust.
