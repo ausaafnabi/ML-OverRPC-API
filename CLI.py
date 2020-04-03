@@ -4,7 +4,7 @@ import click
 from PyInquirer import (Token,ValidationError,Validator ,print_json,prompt,style_from_dict)
 import six
 from pyfiglet import figlet_format
-from utils.CreateTemplate import * 
+from utils.CreateTemplate import *
 
 try:
      import colorama
@@ -20,7 +20,7 @@ except ImportError:
 style = style_from_dict({
     Token.QuestionMark: '#fac731 bold',
     Token.Answer: '#4688f1 bold',
-    Token.Instruction: '', 
+    Token.Instruction: '',
     Token.Seperator: '#cc5454',
     Token.Selected: '#0abf5b',
     Token.Pointer: '#673ab7 bold',
@@ -38,9 +38,9 @@ def log(string,color,font="slant",figlet=False):
 
 class EmptyValidator(Validator):
     def validate(self,value):
-        if len(value.text):
+        if len(value):
             return True
-        else: 
+        else:
             raise ValidationError(
                 message="You can't leave this blank",
                 cursor_position = len(value.text))
@@ -54,7 +54,7 @@ def askProjectInfo():
             'type' : 'input',
             'name' : 'ProjectName',
             'message' : 'PROJECTNAME',
-            'validate' : EmptyValidator 
+            'validate' : EmptyValidator
         },
     ]
     answers = prompt(questions,style=style)
@@ -66,13 +66,13 @@ def askMLModelInformation():
             'type' : 'input',
             'name' : 'Dataset',
             'message' : 'DATASET',
-            'validate' : EmptyValidator 
+            'validate' : EmptyValidator
         },
         {
             'type' : 'input',
             'name' : 'Epoches',
             'message' : 'EPOCHES',
-            'validate' : EmptyValidator 
+            'validate' : EmptyValidator
         },
         {
             'type' : 'list',
@@ -80,13 +80,13 @@ def askMLModelInformation():
             'message' : 'CLASSIFIER',
             'choices' : ['Text_Recognizer','Speech_Recognizer','Image_Recognizer'],
             'filter' : lambda val :val.lower()
-            #'validate' : EmptyValidator 
+            #'validate' : EmptyValidator
         },
         {
             'type' : 'confirm',
             'name' : 'confirm_content',
             'message' : 'Do You Want to Send the Request to Train this model (Y/n): ',
-            'validate' : EmptyValidator 
+            'validate' : EmptyValidator
         },
     ]
     answers = prompt(questions,style=style)
