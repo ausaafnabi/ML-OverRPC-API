@@ -10,4 +10,4 @@ class Test_CLI(unittest.TestCase):
         self.value2= EmptyValidator()
 
         self.assertTrue(self.value1.validate('Sometext'))
-        self.assertRaises(ValidationError,self.value2.validate(''))
+        self.assertRaises(ValidationError,self.value2.validate,'')

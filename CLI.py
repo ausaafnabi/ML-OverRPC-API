@@ -43,7 +43,7 @@ class EmptyValidator(Validator):
         else:
             raise ValidationError(
                 message="You can't leave this blank",
-                cursor_position = len(value.text))
+                cursor_position = len(value))
 
 def getContentType(answer, conttype):
     return answer.get("content_type").lower() == conttype.lower()
