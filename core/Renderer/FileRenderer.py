@@ -24,7 +24,9 @@ def Renderer(filename,extention, filetype):
         #for i in dep:
         virtualcoder.writelines(dep)
     #
-Renderer('Test','.py','HelloWorld')        
+# To test the file ..... Uncomment it
+# Renderer('Test','.py','HelloWorld')        
+
 #class renderer():
     
  #   pass
