@@ -1,11 +1,30 @@
+HelloWorld = """#importing Hello World
+def HelloWorld():
+    print('Hello')
+"""
 Initializer = {
     "Usage" : "To initialize the data",
-     "code" : "lorem ipsum dolor set emit constrecteur",
+     "code" : "#A comment of Approval",
      "discription" : "some discription"
 }
+HelloFunction = {
+    "Usage" : "To test the code",
+     "code" : HelloWorld,
+     "discription" : "some discription"
+}
+HelloCall = {
+    "Usage" : "To initialize the data",
+     "code" : "HelloWorld()",
+     "discription" : "some discription"
+}
+
  
 CODEBASE = {
   "Pipelines" : {
-    "Initializer" : Initializer
+    "Initializer" : Initializer,
+  },
+  "HelloWorld" : {
+      "Function" : HelloFunction,
+      "Function Call": HelloCall, 
   }
 } 

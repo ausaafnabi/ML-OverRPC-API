@@ -5,6 +5,7 @@ from PyInquirer import (Token,ValidationError,Validator ,print_json,prompt,style
 import six
 from pyfiglet import figlet_format
 from utils.CreateTemplate import *
+from core.Renderer.FileRenderer import * 
 
 try:
      import colorama
@@ -98,7 +99,8 @@ def main():
     log("Set-Up The Chain Call Procedure for ML models","green")
     ProjInfo = askProjectInfo()
     #MLInfo = askMLModelInformation()
-
+    # To test the file Created from root uncomment it
+    #Renderer('Hello','.py','HelloWorld')
     CreateDirectory(ProjInfo.get('ProjectName'))
     dirmsg = 'Creating ' + ProjInfo.get('ProjectName') + '  Directory in '
     log(dirmsg ,color="green")
