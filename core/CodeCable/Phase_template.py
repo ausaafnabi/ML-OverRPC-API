@@ -28,4 +28,3 @@ CODEBASE = {
   }
 } 
 
-print(HelloFunction['code'])
