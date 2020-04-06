@@ -1,5 +1,6 @@
-
-from Code import *
+import sys
+sys.path.append('../../')
+from core.CodeCable.Code import *
 
 Initializer = {
     "Usage" : "To initialize the data",
