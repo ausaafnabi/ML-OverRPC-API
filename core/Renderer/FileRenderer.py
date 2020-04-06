@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../../')
+sys.path.append('../')
 from core.CodeCable.Phase_template import *
 
 
@@ -8,6 +8,7 @@ def Fetch_dependency(dep , dict = CODEBASE):
     for i in dict[dep]:
             dependency.append(dict[dep][i]['code'])
     return dependency
+
 ###################################################
 # This is Temporary fix of the solution
 # In the future there will be need of re-visit this module
@@ -27,6 +28,4 @@ def Renderer(filename,extention, filetype):
 # To test the file ..... Uncomment it
 # Renderer('Test','.py','HelloWorld')        
 
-#class renderer():
-    
- #   pass
+
