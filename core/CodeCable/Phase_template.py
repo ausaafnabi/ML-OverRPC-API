@@ -1,7 +1,6 @@
-HelloWorld = """#importing Hello World
-def HelloWorld():
-    print('Hello')
-"""
+
+from Code import *
+
 Initializer = {
     "Usage" : "To initialize the data",
      "code" : "#A comment of Approval",
@@ -28,3 +27,5 @@ CODEBASE = {
       "Function Call": HelloCall, 
   }
 } 
+
+print(HelloFunction['code'])
