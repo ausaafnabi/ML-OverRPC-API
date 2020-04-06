@@ -1,8 +1,8 @@
 import os
 from utils.Template_directory import *
 
-layer1 = [overviewDirectory1,overviewDirectory2]
-layer1_names = ['overviewDirectory1','overviewDirectory2']
+layer1 = [Experiment,Production]
+layer1_names = ['Experiment','Production']
 
 def GetCurrentDirectory():
     currentDirectory = os.getcwd()
