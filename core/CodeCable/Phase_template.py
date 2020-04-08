@@ -17,15 +17,12 @@ HelloCall = {
      "code" : "HelloWorld()",
      "discription" : "some discription"
 }
-
- 
 CODEBASE = {
   "Pipelines" : {
     "Initializer" : Initializer,
   },
   "HelloWorld" : {
       "Function" : HelloFunction,
-      "Function Call": HelloCall, 
+      "Function Call": HelloCall,
   }
-} 
-
+}
