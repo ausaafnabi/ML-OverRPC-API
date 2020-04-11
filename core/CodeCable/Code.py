@@ -1,6 +1,6 @@
 from string import Template
 
-HelloWorld = Template("""#importing Hello World
+HelloWorld = """#importing Hello World
 def HelloWorld():
     print('Hello')
-""")
+"""

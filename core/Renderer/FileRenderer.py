@@ -21,16 +21,16 @@ def Fetch_dependency(dep , dict = CODEBASE):
 # - file handling
 # ################################################
 strfile=[]
-def Renderer(filename,extention, filetype):
-   # global strfile
+def Renderer(filelocation, filename, filetype):
+    global strfile
     dep = Fetch_dependency(filetype)
-    file = filename + extention
+    file = filelocation + filename
+
     with open(file,'w') as virtualcoder:
-    #    for i in range(0,len(dep),2):
-            strfile.append(dep[0].substitute())
-            """dep[0]instead of dep[i]
-            because inside list there would be only 2 elements template location and template name"""
-            virtualcoder.writelines(dep[0].substitute())
+        #for i in dep:
+        
+        virtualcoder.writelines(dep)
+    #
     #
 # To test the file ..... Uncomment it
-Renderer('Test','.py',"HelloWorld")
+#Renderer('Test','.py',"HelloWorld")

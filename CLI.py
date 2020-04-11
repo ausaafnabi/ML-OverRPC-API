@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 import os
 import re
 import click
@@ -105,6 +105,7 @@ def main():
    # CreateDirectory(ProjInfo.get('ProjectName'))
     dirmsg = 'Creating ' + ProjInfo.get('ProjectName') + '  Directory in ' + GetCurrentDirectory()
     log(dirmsg ,color="green")
-   # Generator(ProjInfo.get('ProjectName'))
+    
+    Generator(ProjInfo.get('ProjectName'))
 if __name__ == '__main__':
     main()
