@@ -20,17 +20,13 @@ def Fetch_dependency(dep , dict = CODEBASE):
 # - Search Schema
 # - file handling
 # ################################################
-strfile=[]
 def Renderer(filelocation, filename, filetype):
-    global strfile
-    dep = Fetch_dependency(filetype)
-    file = filelocation + filename
+    Renderer.dep = Fetch_dependency(filetype)
+    Renderer.file = filelocation + filename
 
-    with open(file,'w') as virtualcoder:
-        #for i in dep:
-        
-        virtualcoder.writelines(dep)
+    with open(Renderer.file,'w') as virtualcoder:
+        virtualcoder.writelines(Renderer.dep)
     #
     #
 # To test the file ..... Uncomment it
-#Renderer('Test','.py',"HelloWorld")
+# Renderer('Test','.py',"HelloWorld")
