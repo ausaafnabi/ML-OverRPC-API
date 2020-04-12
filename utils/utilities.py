@@ -27,8 +27,7 @@ def get_latest_modified(directory_location):
     for entry in dir_entries:
         if entry.is_file():
             info = entry.stat()
-            print(f'{entry.name}\t Last Modified: {convert_date(info.st_mtime)}')
-get_latest_modified('../')
+            print(str(entry.name)+"Last Modified: "+str(convert_date(info.st_mtime)))
 
 # PATTERN MATCHING :
 #Can use the glob pattern to find file in the pattern
@@ -38,4 +37,3 @@ import glob
 def Pattern_Match(pattern):
     for name in glob.glob(pattern):
         print(name)
-    
