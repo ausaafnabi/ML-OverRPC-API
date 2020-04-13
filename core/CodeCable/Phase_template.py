@@ -7,6 +7,21 @@ Initializer = {
      "code" : "#A comment of Approval",
      "discription" : "some discription"
 }
+Imports = {
+    "Usage" : "Required Imports",
+     "code" : MLPre+MLKeras,
+     "discription" : "some discription"
+}
+Plumber = {
+    "Usage" : "Required Imports",
+     "code" : Pipeline,
+     "discription" : "some discription"
+}
+Sequential = {
+    "Usage" : "Basic keras model ",
+     "code" : Sequential,
+     "discription" : "some discription"
+}
 HelloFunction = {
     "Usage" : "To test the code",
      "code" : HelloWorld,
@@ -20,6 +35,13 @@ HelloCall = {
 CODEBASE = {
   "Pipelines" : {
     "Initializer" : Initializer,
+    "Imports" : Imports,
+    "Plumber" : Plumber,
+  },
+  "KerasModels" : {
+    "Initializer" : Initializer,
+    "Imports" : Imports,
+    "Sequential" : Sequential,
   },
   "HelloWorld" : {
       "Function" : HelloFunction,
