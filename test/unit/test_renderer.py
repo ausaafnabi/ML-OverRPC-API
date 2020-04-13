@@ -7,8 +7,12 @@ class Test_Renderer(unittest.TestCase):
 
     def test_Renderer(self):
         Renderer('Test','.py',"HelloWorld")
-        virtualcode=""
-        with open('Test.py','r') as file:
+        virtualcode_read=""
+        virtualcode_wrote=""
+
+        with open(Renderer.file,'r') as file:
             for i in file.readlines():
-                virtualcode+=i
-            self.assertEqual(strfile[0],virtualcode)
+                virtualcode_read+=i
+            for i in Renderer.dep:
+                virtualcode_wrote+=i
+        self.assertEqual(virtualcode_read,virtualcode_wrote)

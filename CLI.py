@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import os
 import re
 import click
@@ -6,7 +5,7 @@ from PyInquirer import (Token,ValidationError,Validator,print_json,prompt,style_
 import six
 from pyfiglet import figlet_format
 from utils.CreateTemplate import *
-from core.Renderer.FileRenderer import * 
+from core.Renderer.FileRenderer import *
 
 try:
      import colorama
@@ -105,7 +104,7 @@ def main():
    # CreateDirectory(ProjInfo.get('ProjectName'))
     dirmsg = 'Creating ' + ProjInfo.get('ProjectName') + '  Directory in ' + GetCurrentDirectory()
     log(dirmsg ,color="green")
-    
+
     Generator(ProjInfo.get('ProjectName'))
 if __name__ == '__main__':
     main()
