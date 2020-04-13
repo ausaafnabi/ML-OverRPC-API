@@ -27,7 +27,7 @@ def get_latest_modified(directory_location):
         if entry.is_file():
             info = entry.stat()
             print(str(entry.name)+" Last Modified: "+str(convert_date(info.st_mtime)))
-            
+
 # PATTERN MATCHING :
 #Can use the glob pattern to find file in the pattern
 # eg : '*[0-9]*.py', '*.py' etc
