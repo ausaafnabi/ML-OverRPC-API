@@ -10,3 +10,4 @@ from PyInquirer import (ValidationError,Validator)
 class Test_CLI(unittest.TestCase):
 
     def test_askProjectInfo(self):
+        pass
