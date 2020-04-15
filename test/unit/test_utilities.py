@@ -8,8 +8,8 @@ from utils.utilities import *
 
 class Test_utilities(unittest.TestCase):
     def test_Fetch_directories(self):
-        subdirs= Fetch_directories(str(os.getcwd())+'/test')
-        self.assertEqual(subdirs,['__pycache__','integration','unit'])
+        subdirs= Fetch_directories(str(os.getcwd())+'/test/unit')
+        self.assertEqual(subdirs,['testobj','__pycache__'])
 
     def test_convert_date(self):
         self.assertEqual('12 Apr 2020',convert_date(1586718992))
@@ -29,4 +29,8 @@ class Test_utilities(unittest.TestCase):
         capturedOutput = io.StringIO()
         with redirect_stdout(capturedOutput):
             Pattern_Match(str(os.getcwd())+'/*.md')
+            ### On nix systems use below code
             self.assertEqual(str(os.getcwd())+"/README.md\n",capturedOutput.getvalue())
+            ### For Windowns
+            ### self.assertEqual(str(os.getcwd())+"\\README.md\n",capturedOutput.getvalue())
+            ###                                    ""
