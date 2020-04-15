@@ -9,7 +9,7 @@ from utils.utilities import *
 class Test_utilities(unittest.TestCase):
     def test_Fetch_directories(self):
         subdirs= Fetch_directories(str(os.getcwd())+'/test/unit')
-        self.assertEqual(subdirs,['testobj','__pycache__'])
+        self.assertEqual(subdirs,['__pycache__','testobj'])
 
     def test_convert_date(self):
         self.assertEqual('12 Apr 2020',convert_date(1586718992))
@@ -18,7 +18,7 @@ class Test_utilities(unittest.TestCase):
         capturedOutput = io.StringIO()
         with redirect_stdout(capturedOutput):
             get_latest_modified(str(os.getcwd())+'/test/unit/testobj')
-            self.assertEqual('13-04-2020 Plz do Not Modify.txt Last Modified: 13 Apr 2020\n',capturedOutput.getvalue())
+            self.assertEqual('13-04-2020 Plz do Not Modify.txt Last Modified: 15 Apr 2020\n',capturedOutput.getvalue())
 
 
     def test_Pattern_Match(self):
