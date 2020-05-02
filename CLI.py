@@ -1,11 +1,11 @@
 import os
 import re
 import click
-from PyInquirer import (Token,ValidationError,Validator ,print_json,prompt,style_from_dict)
+from PyInquirer import (Token,ValidationError,Validator,print_json,prompt,style_from_dict)
 import six
 from pyfiglet import figlet_format
 from utils.CreateTemplate import *
-from core.Renderer.FileRenderer import * 
+from core.Renderer.FileRenderer import *
 
 try:
      import colorama
@@ -39,12 +39,12 @@ def log(string,color,font="slant",figlet=False):
 
 class EmptyValidator(Validator):
     def validate(self,value):
-        if len(value):
+        if len(value.text):
             return True
         else:
             raise ValidationError(
                 message="You can't leave this blank",
-                cursor_position = len(value))
+                cursor_position = len(value.text))
 
 def getContentType(answer, conttype):
     return answer.get("content_type").lower() == conttype.lower()
@@ -101,9 +101,10 @@ def main():
     #MLInfo = askMLModelInformation()
     # To test the file Created from root uncomment it
     #Renderer('Hello','.py','HelloWorld')
-    CreateDirectory(ProjInfo.get('ProjectName'))
-    dirmsg = 'Creating ' + ProjInfo.get('ProjectName') + '  Directory in '
+   # CreateDirectory(ProjInfo.get('ProjectName'))
+    dirmsg = 'Creating ' + ProjInfo.get('ProjectName') + '  Directory in ' + GetCurrentDirectory()
     log(dirmsg ,color="green")
 
+    Generator(ProjInfo.get('ProjectName'))
 if __name__ == '__main__':
     main()

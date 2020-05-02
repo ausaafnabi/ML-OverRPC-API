@@ -1,5 +1,6 @@
 import sys
 sys.path.append('../../')
+from string import Template
 from core.CodeCable.Phase_template import *
 
 
@@ -9,6 +10,8 @@ def Fetch_dependency(dep , dict = CODEBASE):
             dependency.append(dict[dep][i]['code'])
     return dependency
 
+
+
 ###################################################
 # This is Temporary fix of the solution
 # In the future there will be need of re-visit this module
@@ -16,16 +19,14 @@ def Fetch_dependency(dep , dict = CODEBASE):
 # - Parameters
 # - Search Schema
 # - file handling
-# ################################################ 
+# ################################################
+def Renderer(filelocation, filename, filetype):
+    Renderer.dep = Fetch_dependency(filetype)
+    Renderer.file = filelocation + filename
 
-def Renderer(filename,extention, filetype):
-    dep = Fetch_dependency(filetype)
-    file = filename + extention
-    with open(file,'w') as virtualcoder:
-        #for i in dep:
-        virtualcoder.writelines(dep)
+    with open(Renderer.file,'w') as virtualcoder:
+        virtualcoder.writelines(Renderer.dep)
+    #
     #
 # To test the file ..... Uncomment it
-# Renderer('Test','.py','HelloWorld')        
-
-
+# Renderer('Test','.py',"HelloWorld")
